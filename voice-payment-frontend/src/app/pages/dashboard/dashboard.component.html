@@ -1,0 +1,68 @@
+<div class="dashboard-wrapper">
+
+  <header class="page-header">
+    <h1>Welcome, {{ user?.usernameVoice || 'User' }}</h1>
+    <span class="balance-header">Balance: ₹{{ user?.balance | number:'1.2-2' }}</span>
+    <button mat-stroked-button color="warn" (click)="logout()">Logout</button>
+  </header>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="addBankAccount()">
+      <mat-icon>add</mat-icon> Add Bank Account
+    </button>
+
+    <button mat-raised-button color="accent" (click)="makePayment()">
+      <mat-icon>mic</mat-icon> Make Payment
+    </button>
+
+    <button mat-raised-button color="primary" (click)="showBalance()">
+      <mat-icon>account_balance_wallet</mat-icon> Balance
+    </button>
+  </div>
+
+  <!-- Rest of your dashboard content remains the same -->
+  <mat-card class="section-card">
+    <mat-card-header>
+      <mat-card-title>Recent Transactions</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="transactions" class="mat-elevation-z8">
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Date</th>
+          <td mat-cell *matCellDef="let t">{{ t.date | date:'dd/MM/yyyy HH:mm' }}</td>
+        </ng-container>
+        <ng-container matColumnDef="person">
+          <th mat-header-cell *matHeaderCellDef>Person</th>
+          <td mat-cell *matCellDef="let t">{{ t.personName }}</td>
+        </ng-container>
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef>Amount</th>
+          <td mat-cell *matCellDef="let t">{{ t.amount }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div *ngIf="transactions.length === 0" class="empty-state">
+        No transactions yet.
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="section-card">
+    <mat-card-header>
+      <mat-card-title>Your Bank Accounts</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngIf="bankAccounts.length === 0" class="empty-state">
+        No accounts added yet.
+      </div>
+      <ul class="account-list" *ngIf="bankAccounts.length > 0">
+        <li *ngFor="let acc of bankAccounts" class="account-item">
+          <div class="account-name">{{ acc.name }}</div>
+          <div class="account-detail">{{ acc.accountId | slice:0:6 }}...{{ acc.accountId.slice(-4) }}</div>
+          <div class="account-branch">{{ acc.branchName }} • {{ acc.ifscCode }}</div>
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</div>

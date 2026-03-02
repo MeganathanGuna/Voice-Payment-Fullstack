@@ -1,0 +1,88 @@
+/* ========================
+   Global Classic Theme
+   ======================== */
+
+:root {
+  --primary: #1a237e;           /* deep navy */
+  --primary-dark: #121858;
+  --primary-light: #303f9f;
+  
+  --accent: #d4af37;            /* muted gold */
+  --accent-dark: #b8972e;
+  
+  --warn: #c62828;
+  
+  --background: #f8f9fc;
+  --surface: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #455a64;
+  --border: #e0e0e0;
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.10);
+}
+
+/* Body & general reset */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  font-weight: 500;
+  margin-top: 0;
+}
+
+/* Material overrides */
+.mat-mdc-card {
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft) !important;
+  background: var(--surface);
+}
+
+.mat-mdc-raised-button {
+  border-radius: 8px;
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  padding: 0 24px;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  background-color: var(--primary);
+}
+
+.mat-mdc-raised-button.mat-accent {
+  background-color: var(--accent);
+  color: #1a1a1a;
+}
+
+.mat-mdc-stroked-button {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.mat-mdc-table {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mat-mdc-header-cell {
+  font-weight: 600;
+  color: #37474f;
+  background-color: #f5f7fa;
+}
+
+.mat-mdc-row:hover {
+  background-color: #fafafa;
+}
+
+/* Dialogs */
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: 12px;
+}

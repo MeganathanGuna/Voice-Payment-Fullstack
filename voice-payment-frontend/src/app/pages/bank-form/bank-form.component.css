@@ -1,0 +1,24 @@
+.bank-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 380px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Classic enhancements */
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-dialog-title {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}

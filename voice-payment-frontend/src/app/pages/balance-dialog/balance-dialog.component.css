@@ -1,0 +1,53 @@
+.balance-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--primary);
+  padding: 32px 0;
+}
+
+.balance-display mat-icon {
+  font-size: 3rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.mat-mdc-dialog-title {
+  text-align: center;
+  color: var(--primary);
+}
+.balance-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 32px 0;
+}
+
+.balance-display mat-icon {
+  font-size: 3.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.add-money-section {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.add-money-section button {
+  font-size: 1.1rem;
+  padding: 12px 32px;
+}
+
+.hint {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-top: 12px;
+}

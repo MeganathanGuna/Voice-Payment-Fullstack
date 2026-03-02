@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Your Available Balance</h2>
+
+<mat-dialog-content>
+  <div class="balance-display">
+    <mat-icon>account_balance_wallet</mat-icon>
+    <span>₹ {{ currentBalance | number:'1.2-2' }}</span>
+  </div>
+
+  <div class="add-money-section">
+    <button mat-raised-button color="primary" (click)="addMoney()">
+      <mat-icon>add_circle</mat-icon> Add ₹500
+    </button>
+    <p class="hint">Click to add money to your wallet</p>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button color="primary" (click)="close()">Close</button>
+</mat-dialog-actions>

@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Add Bank Account</h2>
+
+<form [formGroup]="form" class="bank-form">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Account Holder Name</mat-label>
+    <input matInput formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Account Number</mat-label>
+    <input matInput formControlName="accountId">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Branch Name</mat-label>
+    <input matInput formControlName="branchName">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>IFSC Code</mat-label>
+    <input matInput formControlName="ifscCode">
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-stroked-button (click)="dialogRef.close()">Cancel</button>
+    <button mat-raised-button color="primary" (click)="submit()">Save</button>
+  </div>
+
+</form>

@@ -1,0 +1,15 @@
+# Frontend
+node_modules/
+.angular/
+dist/
+build/
+
+# Backend
+target/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
